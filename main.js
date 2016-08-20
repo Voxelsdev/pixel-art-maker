@@ -1,7 +1,9 @@
 var body = document.querySelector('body'),
     container = document.getElementById('container'),
-    main = [],
     pallet = document.getElementById('pallet'),
+    borderTog = document.getElementById('borderTog'),
+    erase = document.getElementById('erase');
+    main = [],
     h = 0,
     currentColor = 'red';
 
@@ -10,13 +12,29 @@ function draw(event){
   if(event.target.className === 'pallet'){
     currentColor = event.target.style.backgroundColor;
     console.log(currentColor);
-  } else if (event.target.className === 'box'){
+  } else if (event.target.className === 'box' || event.target.className === 'box-no-borders'){
     event.target.style.backgroundColor = currentColor;
   }
 }
 
+function toggleBorders(){
+  for(var i = 0; i < main.length; i++){
+    for(var j = 0; j < main[i].length; j++){
+      if(main[i][j].className === 'box'){
+        main[i][j].className = 'box-no-borders';
+      } else {
+        main[i][j].className = 'box';
+      }
+    }
+  }
+}
+
+function setErase(){
+  currentColor = 'white';
+}
+
 function getHSL(){
-  h += 9;
+  h += 2;
   return 'hsl(' + h + ', 100%, 50%)';
 }
 
@@ -32,12 +50,16 @@ for (var i = 0; i < 40; i++) {
     main[i][j] = div;
   }
 }
+console.log(main);
 
-for (var i = 0; i < 40; i++){
+for (var i = 0; i < 182; i++){
   var cDiv = document.createElement('div');
   cDiv.className = 'pallet';
-  cDiv.style.marginLeft = (i * 25) + 'px';
+  cDiv.style.marginLeft = (i * 5.5) + 'px';
   cDiv.style.backgroundColor = getHSL();
   cDiv.addEventListener('click', draw);
   pallet.appendChild(cDiv);
 }
+
+borderTog.addEventListener('click', toggleBorders);
+erase.addEventListener('click', setErase);
