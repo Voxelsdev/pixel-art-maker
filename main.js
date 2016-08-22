@@ -81,7 +81,7 @@ function divideImage(img){
   for(var i = 0; i < 40; i++){
     for(var j = 0; j < 40; j++){
       main[i][j].style.backgroundColor = getAveOfSeg(segmentWidth, segmentHeight, i * segmentHeight, j * segmentWidth);
-      console.log (((pixelsDone / (cropWidth * cropHeight)) * 100).toFixed(2) + '% Complete.')
+      console.log (((pixelsDone / (cropWidth * cropHeight)) * 100).toFixed(2) + '% Complete.');
     }
   }
   progressBar.textContent = 'Done.';
@@ -138,11 +138,12 @@ window.onload = function(){
       div.style.marginLeft = (j * 25) + 'px';
       div.style.marginTop = (i * 25) + 'px';
       container.appendChild(div);
-      div.addEventListener('click', draw);
-      div.addEventListener('mouseenter', drag);
       main[i][j] = div;
     }
   }
+
+  container.addEventListener('click', draw);
+  container.addEventListener('mousemove', drag);
 
   for (var i = 0; i < 182; i++){
     var cDiv = document.createElement('div');
