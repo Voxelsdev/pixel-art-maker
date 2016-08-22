@@ -11,6 +11,7 @@ var body = document.querySelector('body'),
     main = [],
     h = 0,
     currentColor = 'red',
+    brushSize = 1,
     pixelsDone = 0,
     mouseDown = false;
 
@@ -52,17 +53,17 @@ function getAveOfSeg(width, height, posY, posX){
   var totalR = 0,
       totalG = 0,
       totalB = 0;
-  for(var i = 1; i <= height; i++){
-    for(var j = 1; j <= width; j++){
+  for(var i = 1; i <= height; i+= 2){
+    for(var j = 1; j <= width; j+= 2){
       totalR += ctx.getImageData(j + posX, i + posY, 1, 1).data[0];
       totalG += ctx.getImageData(j + posX, i + posY, 1, 1).data[1];
       totalB += ctx.getImageData(j + posX, i + posY, 1, 1).data[2];
-      pixelsDone ++;
+      pixelsDone += 4;
     }
   }
-  return 'rgb(' + Math.round((totalR / (width * height))) + ', ' +
-                  Math.round((totalG / (width * height))) + ', ' +
-                  Math.round((totalB / (width * height))) + ')';
+  return 'rgb(' + Math.round((totalR / ((width * height) / 4))) + ', ' +
+                  Math.round((totalG / ((width * height) / 4))) + ', ' +
+                  Math.round((totalB / ((width * height) / 4))) + ')';
 }
 
 function divideImage(img){
