@@ -37,11 +37,14 @@ Add a color picker which allows the user to select any brush color using the [`<
 
 ### Deployment
 
-Review the following articles on the Surge platform and then deploy your website to production.
 
-- [Getting started with Surge](http://surge.sh/help/getting-started-with-surge)
-- [Remembering a domain](http://surge.sh/help/remembering-a-domain)
 
-A good domain name for this project is `USERNAME-pixel-art-maker.surge.sh` where `USERNAME` is your GitHub username in all **lowercase** letters. Once deployed and everything works as you expect, copy the URL to your site and paste it below.
-PASTE YOUR PRODUCTION URL HERE
+
+
+WHEN LOADING IN AM IMAGE
+Please open the console, and find a small image (400x400 works best).
+the program is working, the page freezes while the image is loading.
+
+I made it 4x as fast after refactoring but it still takes a while.
+
 http://tyler-pixelart.surge.sh/
