@@ -46,9 +46,11 @@ Add a color picker which allows the user to select any brush color using the [`<
 .
 .
 
-WHEN LOADING IN AM IMAGE
+WHEN LOADING IN AN IMAGE
 Please open the console, and find a small image (400x400 works best).
 the program is working, the page freezes while the image is loading.
+
+I am still refactoring this, and will soon be able to load large images in very quickly.
 
 I made it 4x as fast after refactoring but it still takes a while.
 
