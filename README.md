@@ -36,10 +36,15 @@ Improve the mouse so it behaves like a real paintbrush. In other words, allow th
 Add a color picker which allows the user to select any brush color using the [`<input type="color">` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) and the [`change` event](https://developer.mozilla.org/en-US/docs/Web/Events/change).
 
 ### Deployment
-
-
-
-
+.
+.
+.
+.
+.
+.
+.
+.
+.
 
 WHEN LOADING IN AM IMAGE
 Please open the console, and find a small image (400x400 works best).
